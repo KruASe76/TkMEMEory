@@ -23,8 +23,7 @@ def check():
     global switch, last_widget, current_widget, btn_list
     if True:
         if current_widget['image']==last_widget['image'] and current_widget['text']!=last_widget['text']:
-            current_widget['image'], last_widget['image']=TICK, TICK
-            current_widget['bg'], last_widget['bg']='#eeeeee', '#eeeeee'
+            current_widget['bg'], last_widget['bg']='#fffffe', '#fffffe'
             check_win()
         else:
             for i in btn_list:
