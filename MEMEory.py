@@ -20,7 +20,7 @@ def check_win():
         exit()
 
 def check():
-    global switch, last_widget, current_widget
+    global switch, last_widget, current_widget, btn_list
     if True:
         if current_widget['image']==last_widget['image'] and current_widget['text']!=last_widget['text']:
             current_widget['image'], last_widget['image']=TICK, TICK
@@ -34,7 +34,7 @@ def check():
             last_widget['text'].replace('     ', '')
             last_widget['text']=int(last_widget['text'])
         except AttributeError:
-            current_widget['image']=FLOP
+            btn_list=[]
 
 def tap(event):
     global switch, last_widget, current_widget
@@ -42,7 +42,7 @@ def tap(event):
         if switch:
             event.widget['image']=img_list[event.widget['text']]
             current_widget=event.widget
-            win.after(600, check)
+            win.after(300, check)
         else:
             event.widget['image']=img_list[event.widget['text']]
             event.widget['text']=str(event.widget['text'])
